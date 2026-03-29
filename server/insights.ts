@@ -81,7 +81,7 @@ export async function generateCognitiveInsights(
   timeframeMonths: number = 3
 ): Promise<CognitiveInsights> {
   try {
-    // Step 1: Gather all user messages from Pinecone (semantic search with broad query)
+    // Step 1: Gather all user messages via MongoDB Atlas Vector Search (broad query)
     const allMessages = await semanticSearch(
       userId,
       "personal growth insights beliefs emotions patterns challenges goals",

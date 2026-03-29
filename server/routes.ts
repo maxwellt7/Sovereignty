@@ -256,7 +256,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Edit message and roll back conversation
   app.patch("/api/stacks/:sessionId/message/:messageId", isAuthenticated, async (req: any, res) => {
     try {
-      const userId = req.user.claims.sub;
+      const userId = req.userId;
       const { sessionId, messageId } = req.params;
       const { content } = req.body;
 
