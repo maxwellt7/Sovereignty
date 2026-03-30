@@ -164,7 +164,7 @@ export async function semanticSearch(
     
     const results = await collection.aggregate(pipeline).toArray();
     
-    // Transform to Pinecone-compatible format
+    // Transform results to standard format
     return results.map((doc) => ({
       id: doc._id,
       score: doc.score,
